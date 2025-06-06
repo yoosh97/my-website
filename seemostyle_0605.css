@@ -1,0 +1,305 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=DM+Serif+Text:ital@0;1&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --swiper-theme-color: #fff
+}
+
+body {
+    height: 3000px;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+/* 공통요소 */
+section + section {
+    padding: 120px 0 60px; 
+}
+.inner_box {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+h2 {
+        font-family: "Cormorant", serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+}
+h2 + p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #482921;
+    margin-bottom: 64px;
+}
+.text {
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+.cardSection {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.cardItem {
+    flex: 1 1 calc(25% - 30px);
+    /* 
+        flex : flex-grow flex-shrink flex-basis
+        - flex-grow: 부모공간이 남을 경우 비율대로 늘어난다.
+        - flex-shrink: 공간이 부족한 경우 줄어든다.
+        - flex-basis: 기본너비
+    */
+}
+.cardItem:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.cardItem figure {
+    margin-bottom: 10px;
+}
+.cardItem .cardText {
+    padding: 35px 25px;
+}
+.cardItem .cardText .cardTitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+}
+.cardItem .cardText .tag {margin-bottom: 20px;}
+.cardItem .cardText .tag > a {
+    font-size: 15px;
+    color: #482921;
+    margin: 0 6px;
+}
+.cardItem .cardText .text {margin-bottom: 25px;}
+.cardItem .btnArea {text-align: center;}
+.btn {
+    display: inline-block;
+    width: 180px; height: 44px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #482921;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 44px;
+    text-align: center;
+    color: #482921;
+    transition: all 0.3s;
+}
+.btn on {
+    background: #482921;
+    color: #fff;
+}
+
+.btn.on,
+.btn:hover {
+    background: #482921;
+    color: #fff;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: no-repeat center/cover;
+}
+.swiper-slide.bg01 {background-image: url(../img/main_bg01.png);}
+.swiper-slide.bg02 {background-image: url(../img/main_bg02.png);}
+.swiper-slide.bg03 {background-image: url(../img/main_bg03.png);}
+.swiper-slide.bg04 {background-image: url(../img/main_bg04.png);}
+
+
+/* header */
+header {
+    position: absolute;
+    top: 0;left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 10;
+}
+header .inner_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo > a {
+    display: block;
+    font-family: "Cormorant", serif;
+    font-weight: 600;
+    font-size: 34px;
+    color: #fff;
+    text-transform: uppercase;
+}
+header .gnb_area {
+    width: 52%;
+}
+header .gnb {
+    display: flex;
+    justify-content: space-between; 
+    gap: 15px;
+}
+header .gnb > li {
+    position: relative;
+    flex: 1;
+}
+header .gnb a {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 100px;
+    text-align: center;
+}
+/* header .gnb a:hover {
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 100%;
+    background: #aaae00;
+} */
+header .gnb li::before {
+    position: absolute;
+    top: 0;left: 0;
+    width: 100%;
+    height: 0;
+    background: #ffae00;
+    content: '';
+    transition: all 0.3s;
+
+}
+header .gnb li:hover::before {
+    height: 100%
+}
+
+header .util_nav > a {
+    padding: 5px;
+    margin: 0 8px;
+    font-size: 15px;
+    color: rgba(255, 255,255, 0.85) ;
+
+}
+
+/* 메인비쥬얼 영역 */
+/* #mainVisual {
+    height: 960px;
+    background: url(../img/main_bg01.png) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+} */
+#mainVisual {
+    height: 960px;    
+}  
+#mainVisual .titleArea {
+    text-align: center;
+    margin-bottom: 100px;
+    position: absolute;
+    bottom: 15%;left: 50%;
+    transform: translateX(-50%);
+}
+#mainVisual .titleArea .mainTitle {
+    font-family: "Cormorant", serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+#mainVisual .titleArea .mainText {
+    font-size: 24px;
+    color: #fff;
+    line-height: 1.8;
+}
+
+
+/* story */
+#story {
+    height: 960px;
+    background: url(../img/img_interview.png) center/cover;
+    position: relative;
+}  
+
+#story h2 + p {
+    font-size: 25px;
+    font-family: "Cormorant", serif;
+    line-height: 1.6;
+    margin-top: 40px;
+}
+
+#story h2 + p + p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+
+/* mdpickArea  */
+#mdpickArea  .cardDate {    
+    margin-bottom: 10px;
+} 
+
+
+#mdpickArea figure {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+#mdpickArea figure img:first-child {
+    transition: all 0.4s;
+}
+#mdpickArea li:hover figure img:first-child {
+    transform: scale(1.15);
+}
+#mdpickArea figure::before {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(rgba(195, 109, 17, 0.3),rgba(195, 109, 17, 0.6));
+    transition: all 0.5s;
+    opacity: 1;
+    content: '';
+}
+#mdpickArea li:hover figure::before {
+    opacity: 0;
+}
+#mdpickArea li figure img + img {
+    position: absolute;
+    top: 20px; right: 20px;
+}
+#mdpickArea .cardItem:hover  .btn {
+    background: #482921;
+    color: #fff  ;
+}
+ 
+
+/* footer */
+footer {
+    background: rgba(0,0,0,0.4);
+}
+
+footer > .inner_box {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+footer .f_logo {
+    font-family: "Cormorant", serif;
+    font-weight: 700;
+    font-size: 34px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+footer .copy {
+    font-size: 15px;
+    color: rgba(255, 255,255, 0.8);
+}
+
+
